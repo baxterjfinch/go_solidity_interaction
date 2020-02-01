@@ -1,4 +1,4 @@
-package utils
+package lor
 
 import (
     "context"
@@ -10,11 +10,11 @@ import (
     "github.com/ethereum/go-ethereum/accounts/abi/bind"
     "github.com/ethereum/go-ethereum/crypto"
     "github.com/ethereum/go-ethereum/ethclient"
+    lor "github.com/hemlokc/go_solidity_interaction/compiled/lor"
 
-    store "github.com/hemlokc/go_solidity_interaction/store" // for demo
 )
 
-func DeployERC1155(network string, key string) {
+func DeployContract(network string, key string) {
     client, err := ethclient.Dial(network)
     if err != nil {
         log.Fatal(err)
@@ -44,7 +44,7 @@ func DeployERC1155(network string, key string) {
     // auth.GasPrice = big.NewInt(10000000)
 
     // input := "1.0"
-    address, tx, instance, err := store.DeployStore(auth, client)
+    address, tx, instance, err := lor.DeployLor(auth, client)
     if err != nil {
         log.Fatal(err)
     }
