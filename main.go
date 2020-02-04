@@ -10,7 +10,7 @@ import (
 )
 
 const ethAddress = ""
-const network = "https://ropsten.infura.io/v3/b8238578cbe444438b2f80c928c18df1"
+const network = ""
 const privateKey = ""
 
 // Deployed Matter Contract address
